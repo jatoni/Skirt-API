@@ -15,4 +15,8 @@ public class LoginUserController {
 		return this.login.validateUser(usuarioLoginModel);
 	}
 	
+	public String user(String email) {
+		return this.login.Usuario(email);
+	}
+	
 }

@@ -12,7 +12,8 @@ import javax.persistence.*;
 @Table(name="tb_usuario")
 @NamedQueries({
 	@NamedQuery(name="TbUsuario.findAll", query="SELECT t FROM TbUsuario t"),
-	@NamedQuery(name="TbUsuario.findUserByEmailPass", query="SELECT t FROM TbUsuario t WHERE t.correo = :email AND t.password = :pass")
+	@NamedQuery(name="TbUsuario.findUserByEmailPass", query="SELECT t FROM TbUsuario t WHERE t.correo = :email AND t.password = :pass"),
+	@NamedQuery(name="TbUsuario.finUser", query="SELECT t FROM TbUsuario t WHERE t.correo = :email")
 })
 public class TbUsuario implements Serializable {
 	private static final long serialVersionUID = 1L;

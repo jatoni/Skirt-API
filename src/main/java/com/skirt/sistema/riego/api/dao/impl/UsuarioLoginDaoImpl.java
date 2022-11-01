@@ -38,4 +38,24 @@ public class UsuarioLoginDaoImpl implements UsuarioLoginDAO{
 		return status;
 	}
 
+	@Override
+	public String Usuario(String email) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Skirt-API");
+		List<TbUsuario> usuarios;
+		String user = "";
+		try {
+			EntityManager em = emf.createEntityManager();
+			Query query = em.createNamedQuery("TbUsuario.finUser", TbUsuario.class);
+			query.setParameter("email", email);
+			usuarios = query.getResultList();
+			for(TbUsuario usuario : usuarios) {
+				user = usuario.getNombre() + " " + usuario.getApellidos();
+			}
+		}catch (Exception e) {
+			logger.error("Hubo un error al hacer la consulta de tipo: " + e.getMessage());
+			user = "";
+		}
+		return user;
+	}
+
 }

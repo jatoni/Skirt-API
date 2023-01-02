@@ -20,8 +20,7 @@ public class TbUsuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_usuario")
-	private byte idUsuario;
+	private short idUsuario;
 
 	private String apellidos;
 
@@ -31,12 +30,12 @@ public class TbUsuario implements Serializable {
 
 	private String password;
 
-	private String usurio;
+	private String usuario;
 
 	public TbUsuario() {
 	}
 
-	public byte getIdUsuario() {
+	public short getIdUsuario() {
 		return this.idUsuario;
 	}
 
@@ -76,12 +75,12 @@ public class TbUsuario implements Serializable {
 		this.password = password;
 	}
 
-	public String getUsurio() {
-		return this.usurio;
+	public String getUsuario() {
+		return this.usuario;
 	}
 
-	public void setUsurio(String usurio) {
-		this.usurio = usurio;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 }

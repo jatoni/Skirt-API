@@ -1,7 +1,9 @@
-com\skirt\sistema\riego\api\controller\LoginUserController.class
 com\skirt\sistema\riego\api\models\ResponseModel.class
-com\skirt\sistema\riego\dao\UsuarioLoginDAO.class
-com\skirt\sistema\riego\api\dao\impl\UsuarioLoginDaoImpl.class
+com\skirt\sistema\riego\api\exception\InsertException.class
 com\skirt\sistema\riego\api\ServiceLogin.class
+com\skirt\sistema\riego\api\controller\UserController.class
+com\skirt\sistema\riego\api\ServiceCreateUser.class
+com\skirt\sistema\riego\dao\UsuarioDAO.class
+com\skirt\sistema\riego\api\dao\impl\UsuarioDaoImpl.class
 com\skirt\sistema\riego\api\entity\TbUsuario.class
 com\skirt\sistema\riego\api\models\UsuarioLoginModel.class

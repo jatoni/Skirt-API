@@ -7,11 +7,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.skirt.sistema.riego.api.controller.LoginUserController;
+import com.skirt.sistema.riego.api.controller.UserController;
 import com.skirt.sistema.riego.api.models.ResponseModel;
 import com.skirt.sistema.riego.api.models.UsuarioLoginModel;
-
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 
@@ -19,12 +17,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public class ServiceLogin {
 	private Response respuesta;
 	
-	@CrossOrigin(origins = "http://127.0.0.1:5500/")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response ValidarUsuario(UsuarioLoginModel usuario) {
-		LoginUserController login = new LoginUserController();
+		UserController login = new UserController();
 		if(usuario != null || !usuario.getEmail().isEmpty() || !usuario.getPassword().isEmpty()) {
 			if(login.IsExistUser(usuario)) {
 				respuesta = Response.status(Response.Status.FOUND).entity(new ResponseModel(200, login.user(usuario.getEmail()))).build();
